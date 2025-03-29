@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title> {{ product.name }} </title>
+        <title> {{ product.nome }} </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -17,9 +17,9 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light p-0" style="align-items: center; justify-content: center; display: flex; text-align: center;">
+        <nav class="navbar navbar-expand-lg p-0" style="background-color: #f8b3d0; align-items: center; justify-content: center; display: flex; text-align: center;">
             <div class="px-5 m-auto" style="align-items: center; justify-content: center; display: flex; text-align: center;">
-                <a class="navbar-brand mt-2" href="{% url 'ProductListView' %}"> <p><strong> Rosamenina </strong> </p></a>
+                <a class="navbar-brand mt-2" style="color: #ffffff;" href="{% url 'ProductListView' %}"> <p><strong> Rosamenina </strong> </p></a>
             </div>
         </nav>
 
@@ -27,25 +27,25 @@
         <section class="py-3">
             <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{ product.image.url }}" alt="{{ product.name }}" /></div>
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{ product.imagem.url }}" alt="{{ product.nome }}" /></div>
                 <div class="col-md-6">
                 <div class="small mb-1">ID: {{ product.id }}</div>
-                <h1 class="display-5 fw-bolder">{{ product.name }}</h1>
+                <h1 class="display-5 fw-bolder">{{ product.nome }}</h1>
 
                 {% if product.description %}
                 <div class="fs-5 mb-4">
-                    <p class="lead">{{ product.description }}</p>
+                    <p class="lead">{{ product.descricao }}</p>
                 </div>
                 {% endif %}
 
-                <h5 class="mb-5"><strong>R$ {{ product.price }} </strong> </h5>
+                <h5 class="mb-5"><strong>R$ {{ product.preco }} </strong> </h5>
                 
                 <div class="d-flex">
-                    <a class="btn btn-success flex-shrink-0 me-3" href="{% url 'sale' product.id %}">
+                    <a class="btn flex-shrink-0 me-3"  style="background-color: #f8b3d0; color: #fff;" href="{% url 'sale' product.id %}">
                         <i class="bi-cart-fill me-1"></i>
                         Vender
                     </a>                    
-                <p class="mt-1"> Quantidade disponível: {{ product.quantity }} </p>
+                <p class="mt-1"> Quantidade disponível: {{ product.quantidade }} </p>
                 </div>
                 </div>
             </div>
